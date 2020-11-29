@@ -5,7 +5,7 @@
 
 
 #執行程式
-若有更改執行檔以外的程式，執行程式前先執行以下兩行指令:
+- 若有更改執行檔以外的程式，執行程式前先執行以下兩行指令:
 
     make clean
     make -j
@@ -15,7 +15,8 @@
     python darknet_video_ws.py 
 
 ### 2.開啟會連接上websocket server的網頁
-可在本地開啟範例網頁(於此資料夾中):demo.html
+
+- 可在本地開啟範例網頁(於此資料夾中):demo.html
 
 ## test
 ### 圖片
@@ -27,7 +28,7 @@ ex.
     
 ### 影片
     ./darknet detector demo cfg/voc.data cfg/CORE_FE_mish.cfg weight檔 影片檔
-若要儲存結果，在後方加上"-out_filename 欲儲存檔"
+- 若要儲存結果，在後方加上"-out_filename 欲儲存檔"
 
 ex.
 
@@ -60,6 +61,6 @@ ex. (串流影片)
 ex.
 
     ./darknet detector train cfg/voc.data cfg/CORE_FE_mish.cfg backup/filename.weights
-假如訓練中斷，可利用last檔繼續訓練
+- 假如訓練中斷，可利用last檔繼續訓練
     
     ./darknet detector train cfg/voc.data cfg/CORE_FE_mish.cfg backup/CORE_FE_mish_last.weights
