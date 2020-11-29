@@ -1,11 +1,11 @@
 # Project - marine_waste
-# 一、重要檔案解釋
+# 一.重要檔案解釋
 - model 架構: 
 cfg/CORE_FE_mish.cfg
 - 訓練好的 model: 
 backup/CORE_FE_mish1129_127000.weights
 
-# 二、更改執行檔基本內容
+# 二.更改執行檔基本內容
 - 執行檔:  darknet_video_ws.py
 
 ### 必須更改
@@ -28,7 +28,7 @@ backup/CORE_FE_mish1129_127000.weights
         width = 1024
         height = 768
         
-# 三、執行程式
+# 三.執行程式
 - 若有更改執行檔以外的程式，執行程式前先執行以下兩行指令:
 
         make clean        
@@ -42,7 +42,7 @@ backup/CORE_FE_mish1129_127000.weights
 
 - 可在本地開啟範例網頁(於此資料夾中):demo.html ，需先確認websocket url 正確 ，請見程式碼註解"IP address & Port"下方 
 
-# 四、test and train
+# 四.test and train
 ## test
 - 圖片
     ./darknet detector test cfg/voc.data cfg/CORE_FE_mish.cfg weight檔 圖片檔 
