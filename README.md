@@ -1,6 +1,4 @@
 # marine_waste
-
-
 ###若有更改執行檔以外的程式，執行程式前先執行以下兩行指令:
     make clean
     make -j
@@ -58,3 +56,4 @@ ex.
 假如訓練中斷，可利用last檔繼續訓練
     
     ./darknet detector train cfg/voc.data cfg/CORE_FE_mish.cfg backup/CORE_FE_mish_last.weights
+
