@@ -50,7 +50,7 @@ ex. http://140.121.199.58:1111/Stream
 - 方式2:直接在瀏覽器開啟url    
     在瀏覽器網址列輸入url即可
 
-    *補充說明-建置串流
+- 補充說明-建置串流
     本計畫將偵測結果影像建置為網頁可讀取之串流，使用的建置工具為Flask
 
 
@@ -59,6 +59,7 @@ ex. http://140.121.199.58:1111/Stream
 -  圖片
 
     1.只須test一張圖片:
+
     ```./darknet detector test cfg/voc.data cfg/CORE_FE_mish.cfg (weight Path) (圖片Path) ```
     ex.
     
@@ -67,7 +68,9 @@ ex. http://140.121.199.58:1111/Stream
     會自動將偵測結果儲存為predictions.jpg
 
     2.須test多張圖片：
+
     ```./darknet detector test cfg/voc.data cfg/CORE_FE_mish.cfg (weight Path) ``` 
+
     程式顯示"Enter Image Path:"後，輸入圖片Path
     
     補充-可一次輸入多張圖片Path，程式會依序顯示偵測結果
@@ -83,6 +86,7 @@ ex. http://140.121.199.58:1111/Stream
 - 影片
 
     1.
+
     ```./darknet detector demo cfg/voc.data cfg/CORE_FE_mish.cfg (weight Path) (影片Path)```
 
     ex.
@@ -127,11 +131,11 @@ ex. http://140.121.199.58:1111/Stream
    
     ```./darknet detector train cfg/voc.data cfg/CORE_FE_mish.cfg backup/CORE_FE_mish_last.weights```
 
-- 若要在chart(程式跑下去就會顯示的即時訓練chart圖)上顯示 mAP，在指令尾巴加上:  -map
+- 若要在chart(程式跑下去就會顯示的即時訓練chart圖)上顯示 mAP，在指令尾巴加上: ``` -map```
 
 - 查看weight結果
 
-可測多個weight檔案，比較哪一個最好
-
-./darknet detector map cfg/voc.data cfg/yolov4-tiny.cfg backup/CORE_FE_mish_last.weights
+    可測多個weight檔案，比較哪一個最好
+    ex.
+    ```./darknet detector map cfg/voc.data cfg/yolov4-tiny.cfg backup/CORE_FE_mish_last.weights```
 
