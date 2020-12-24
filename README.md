@@ -86,23 +86,22 @@ ex. http://140.121.199.58:1111/Stream
         
 - 影片
 
-    1. &nbsp;
-
     ```./darknet detector demo cfg/voc.data cfg/CORE_FE_mish.cfg (weight Path) (影片Path)```
 
     ex.
     
     ```./darknet detector demo cfg/voc.data cfg/CORE_FE_mish.cfg backup/CORE_FE_mish1125_9000.weights  testVideo/1.mp4``` 
-   
-    2.若要儲存結果，在後方加上"-out_filename (欲儲存影片Path)"
-   
-    ex.
-    
-    ```./darknet detector demo cfg/voc.data cfg/CORE_FE_mish.cfg backup/CORE_FE_mish1125_9000.weights  testVideo/1.mp4 -out_filename testVideo/1_output.mp4```
     
     ex. (串流影片)
     
     ```./darknet detector demo cfg/voc.data cfg/CORE_FE_mish.cfg backup/CORE_FE_mish_last1028.weights  rtsp://testguy:05076416@111.70.5.94:10154/profile1```
+
+    若要儲存結果，在後方加上"-out_filename (欲儲存影片Path)"
+   
+    ex.
+    
+    ```./darknet detector demo cfg/voc.data cfg/CORE_FE_mish.cfg backup/CORE_FE_mish1125_9000.weights  testVideo/1.mp4 -out_filename testVideo/1_output.mp4```
+
 
 ## train
 ### 1. 若有新增train or validate data，先重算anchor
@@ -136,9 +135,7 @@ ex. http://140.121.199.58:1111/Stream
 - 若要在chart(程式跑下去就會顯示的即時訓練chart圖)上顯示 mAP，在指令尾巴加上: ``` -map```
 
 - 查看weight結果
-
     可測多個weight檔案，比較哪一個最好
-    
     ex.
 
     ```./darknet detector map cfg/voc.data cfg/yolov4-tiny.cfg backup/CORE_FE_mish_last.weights```
