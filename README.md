@@ -9,12 +9,10 @@ backup/CORE_FE_mish1129_127000.weights
 - 執行檔:  darknet_video_f.py
 
 ### 必須更改
-- 跑此程式的電腦的 IP and Port
-
-        # === Websocket Server === #
-        # 設定要拿來跑此程式的電腦的 IP and Port
-        //IPaddress = '140.121.199.52'
-        //PORT = 8221
+- 跑此程式的電腦的 IP 、設定 Port
+        
+        # host='IP' , port=Port
+        app.run(host='140.121.199.52', debug=False, port=1111, threaded=True)
 
 ### 可以更改
 - input: 更改下方程式碼的default value。(預設為朝境公園抽水站上方攝影機之RTSP url。)
@@ -27,8 +25,13 @@ backup/CORE_FE_mish1129_127000.weights
         # 圖片顯示的 width & height
         width = 1024
         height = 768
-        
-# 三. 執行程式
+
+# 三. 確認顯示偵測結果影像之串流url
+url為: http://(IP):(Port)/Stream
+(IP)-執行程式之電腦IP 、(Port):設定好的port號 (同前面的設定)
+ex. http://140.121.199.52:1111/Stream
+
+# 四. 執行程式
 - 若有更改執行檔以外的程式，執行程式前先執行以下兩行指令:
 
         make clean        
@@ -38,11 +41,19 @@ backup/CORE_FE_mish1129_127000.weights
 ### 1.執行指令:
     python darknet_video_f.py 
 
-### 2.開啟會連接上websocket server的網頁--
+### 2.觀看結果
+#### 方式1:打開已經嵌入正確串流url的網頁
+(嵌入範例: <img src="http://140.121.199.58:1111/Stream">)
+可以打開資料夾內的範例網頁: demo.html
 
-- 可在本地開啟範例網頁(於此資料夾中):demo.html ，需先確認websocket url 正確 ，請見程式碼註解"IP address & Port"下方 
+#### 方式2:直接在瀏覽器開啟url
+在瀏覽器網址列輸入url即可
 
-# 四. test and train
+### *補充說明-建置串流
+本計畫將偵測結果影像建置為網頁可讀取之串流，使用的建置工具為Flask
+
+
+# 五. test and train
 ## test
 - 圖片
 
@@ -84,7 +95,9 @@ backup/CORE_FE_mish1129_127000.weights
 
 ### train
 
+
 - 說怎麼顯示train的圖 +map
+-map
 
 - 從頭train
 
@@ -100,3 +113,9 @@ backup/CORE_FE_mish1129_127000.weights
 - 假如訓練中斷，可利用last檔繼續訓練
    
     ```./darknet detector train cfg/voc.data cfg/CORE_FE_mish.cfg backup/CORE_FE_mish_last.weights```
+
+- 查看weight結果
+可測多個weight檔案，比較哪一個最好
+./darknet detector map cfg/voc.data cfg/yolov4-tiny.cfg backup/CORE_FE_mish_last.weights
+
+Flask
