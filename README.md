@@ -135,7 +135,8 @@ ex. http://140.121.199.58:1111/Stream
 - 若要在chart(程式跑下去就會顯示的即時訓練chart圖)上顯示 mAP，在指令尾巴加上: ``` -map```
 
 - 查看weight結果(可測多個weight檔案，比較哪一個最好)
-        ex.
+
+   ex.
 
     ```./darknet detector map cfg/voc.data cfg/yolov4-tiny.cfg backup/CORE_FE_mish_last.weights```
 
