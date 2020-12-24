@@ -6,15 +6,15 @@ cfg/CORE_FE_mish.cfg
 backup/CORE_FE_mish1129_127000.weights
 
 # 二. 更改執行檔基本內容
-- 執行檔:  darknet_video_ws.py
+- 執行檔:  darknet_video_f.py
 
 ### 必須更改
 - 跑此程式的電腦的 IP and Port
 
         # === Websocket Server === #
         # 設定要拿來跑此程式的電腦的 IP and Port
-        IPaddress = '140.121.199.52'
-        PORT = 8221
+        //IPaddress = '140.121.199.52'
+        //PORT = 8221
 
 ### 可以更改
 - input: 更改下方程式碼的default value。(預設為朝境公園抽水站上方攝影機之RTSP url。)
@@ -36,9 +36,9 @@ backup/CORE_FE_mish1129_127000.weights
 
 ## 於網頁上顯示即時偵測結果
 ### 1.執行指令:
-    python darknet_video_ws.py 
+    python darknet_video_f.py 
 
-### 2.開啟會連接上websocket server的網頁
+### 2.開啟會連接上websocket server的網頁--
 
 - 可在本地開啟範例網頁(於此資料夾中):demo.html ，需先確認websocket url 正確 ，請見程式碼註解"IP address & Port"下方 
 
@@ -47,6 +47,9 @@ backup/CORE_FE_mish1129_127000.weights
 - 圖片
 
     ```./darknet detector test cfg/voc.data cfg/CORE_FE_mish.cfg weight檔 圖片檔 ```
+
+    可以一直放入圖片結果：
+    ```./darknet detector test cfg/voc.data cfg/CORE_FE_mish.cfg weight檔 ``` 
 
     ex.
     
@@ -80,6 +83,9 @@ backup/CORE_FE_mish1129_127000.weights
 ### 確認model(cfg檔)為training模式(檔案內容開頭幾行)
 
 ### train
+
+- 說怎麼顯示train的圖 +map
+
 - 從頭train
 
     ```./darknet detector train cfg/voc.data cfg/CORE_FE_mish.cfg CORE_FE_mish.137```
@@ -94,4 +100,3 @@ backup/CORE_FE_mish1129_127000.weights
 - 假如訓練中斷，可利用last檔繼續訓練
    
     ```./darknet detector train cfg/voc.data cfg/CORE_FE_mish.cfg backup/CORE_FE_mish_last.weights```
-
